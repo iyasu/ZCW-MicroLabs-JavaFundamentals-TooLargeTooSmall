@@ -9,11 +9,10 @@ public class Main {
 
         Scanner in = new Scanner(System.in);
         int number;
-        boolean correct = false;
-        int guess;
+        Integer guess;
         Random rn = new Random();
         int guessCounter = 0;
-        int lastGuess = 0;
+        Integer lastGuess = null;
 
 
         number = rn.nextInt(3) + 1;
@@ -25,8 +24,6 @@ public class Main {
             System.out.print("Guess a number: ");
             guess = in.nextInt();
 
-
-
             if(guess == number ){
                 System.out.println("Just Right");
             }else if(guess < number){
@@ -36,8 +33,7 @@ public class Main {
             }
 
 
-
-            if( lastGuess != guess)
+            if(guess != lastGuess)
                 guessCounter++;
 
             lastGuess = guess;
