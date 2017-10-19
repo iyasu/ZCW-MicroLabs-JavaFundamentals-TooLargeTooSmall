@@ -25,7 +25,7 @@ public class Main {
             System.out.print("Guess a number: ");
             guess = in.nextInt();
 
-            lastGuess = guess;
+
 
             if(guess == number ){
                 System.out.println("Just Right");
@@ -37,7 +37,10 @@ public class Main {
 
 
 
-            guessCounter++;
+            if( lastGuess != guess)
+                guessCounter++;
+
+            lastGuess = guess;
 
             System.out.println("counter: " + guessCounter);
             System.out.println("last: " + lastGuess);
