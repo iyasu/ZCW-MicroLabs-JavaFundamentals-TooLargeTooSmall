@@ -6,20 +6,26 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args){
+
         Scanner in = new Scanner(System.in);
         int number;
+        boolean correct = false;
         int guess;
-        ArrayList<Integer> guesses = new ArrayList<Integer>();
         Random rn = new Random();
+        int guessCounter = 0;
+        int lastGuess = 0;
 
-        number = rn.nextInt(11);
+
+        number = rn.nextInt(3) + 1;
+        System.out.println(number);
+
 
         do {
+
             System.out.print("Guess a number: ");
             guess = in.nextInt();
 
-            if(!guesses.contains(guess))
-                guesses.add(guess);
+            lastGuess = guess;
 
             if(guess == number ){
                 System.out.println("Just Right");
@@ -29,22 +35,23 @@ public class Main {
                 System.out.println("Too Large");
             }
 
+
+
+            guessCounter++;
+
+            System.out.println("counter: " + guessCounter);
+            System.out.println("last: " + lastGuess);
+
         }while(number != guess);
 
-        System.out.println("number guesses: " + guesses.size());
+        System.out.println("number guesses: " + guessCounter );
 
     }
 
 
 
-
-
-
-
-
-
-
-
-
-
 }
+
+
+
+
